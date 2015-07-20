@@ -37,7 +37,7 @@ IncludeTemplateLangFile(__FILE__);
 <div class="main">	
 	<header>
 		<div class="top-nav">
-			<ul>
+<!--			<ul>
 				<li><a href="">О компании</a>
 					<ul>
 						<li><a href="">История</a></li>
@@ -55,7 +55,24 @@ IncludeTemplateLangFile(__FILE__);
 				<li><a href="">Цены</a></li>
 				<li><a href="">Полезная информация</a></li>
 				<li><a href="">Контакты </a></li>
-			</ul>
+			</ul>-->
+			<?$APPLICATION->IncludeComponent(
+				"bitrix:menu",
+				"top",
+				Array(
+					"ROOT_MENU_TYPE" => "top",
+					"MAX_LEVEL" => "3",
+					"CHILD_MENU_TYPE" => "left",
+					"USE_EXT" => "Y",
+					"DELAY" => "N",
+					"ALLOW_MULTI_SELECT" => "N",
+					"MENU_CACHE_TYPE" => "A",
+					"MENU_CACHE_TIME" => "3600",
+					"MENU_CACHE_USE_GROUPS" => "Y",
+					"MENU_CACHE_GET_VARS" => array()
+				),
+				false
+			);?>
 		</div>
 		<div class="middle-head">
 			<div class="logo-wrap">

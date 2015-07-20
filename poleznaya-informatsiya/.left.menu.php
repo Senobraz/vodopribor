@@ -1,0 +1,25 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Паспорта", 
+		"/poleznaya-informatsiya/pasporta/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Сертификаты", 
+		"/poleznaya-informatsiya/sertifikaty/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Вопрос-ответ", 
+		"/poleznaya-informatsiya/faq/", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>
