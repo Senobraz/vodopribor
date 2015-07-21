@@ -1,19 +1,18 @@
 <?if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
-
 <?if (empty($arResult)) return;?>
-<ul>
-<?foreach($arResult as $arItem){?>
-
-    <li>       
+<? function show_html_ul_menu( $arItems ) { ?>
+<ul>	
+	<?foreach($arItems as $arItem) :?>
+	<li class="<?= $arItem["SELECTED"] ? "opened hasul" : "" ?>">       
         <a href="<?=$arItem["LINK"]?>" class="<?= $arItem["SELECTED"] ? "active" : "" ?>"><?=$arItem["TEXT"]?></a>
-        <?if(count($arItem["ITEMS"])){?>
-        <ul>
-            <?foreach($arItem["ITEMS"] as $arItemSub){?>
-            <li><a href="<?=$arItemSub["LINK"]?>" class="<?= $arItem["SELECTED"] ? "active" : "" ?>"><?=$arItemSub["TEXT"]?></a></li>
-            <?}?>
-        </ul>
-        <?}?>
+        <?if(count($arItem["ITEMS"])){
+			show_html_ul_menu($arItem["ITEMS"]);
+        }?>
     </li>
+	<?endforeach?> 
+</ul>
+<? } ?>
+<? echo show_html_ul_menu($arResult) ?>
 
-<?}?>
-</ul>	
+
+

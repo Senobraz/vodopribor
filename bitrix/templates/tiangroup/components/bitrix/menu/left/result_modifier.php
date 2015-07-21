@@ -1,54 +1,30 @@
-<?php if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
-
-$items = array();
-
-foreach($arResult as $arItem)
-{
-    $level = $arItem["DEPTH_LEVEL"];
-
-    if($level > 1)
-    {
-        $items[count($items)-1]["ITEMS"][] = $arItem;
-    }
-    else
-    {
-        $items[] = $arItem;
-    }
-
-
-}
-
-$arResult = $items;
-
-
-return;
-
-$sections2 = array();
-
-$section_code = $_REQUEST["SECTION_CODE"];
-
-foreach($arResult["SECTIONS"] as $arSection)
-{
-    $level = $arSection["DEPTH_LEVEL"];
-
-    if($level > 1)
-    {
-        if($section_code == $arSection["CODE"])
-        {
-            $sections2[$arSection["IBLOCK_SECTION_ID"]]["SECTION_ACTIVE"] = "Y";
-            $arSection["SECTION_ACTIVE"] = "Y";
-        }
-        $sections2[$arSection["IBLOCK_SECTION_ID"]]["ITEMS"][$arSection['ID']] = $arSection;
-    }else
-    {
-        if($section_code == $arSection["CODE"])
-        {
-            $arSection["SECTION_ACTIVE"] = "Y";
-        }
-        $sections2[$arSection['ID']] = $arSection;
-    }
-
-}
-
-$arResult["SECTIONS2"] = $sections2;
+<?php	
+	$arMenu = array();
+	$inx = 0;
+	
+	$temp_depth_level_1 = 0;
+	$temp_depth_level_2 = 0;
+	$temp_depth_level_3 = 0;
+	
+	foreach ($arResult as $arItem)
+	{
+		if( $arItem["DEPTH_LEVEL"] == 1 )
+		{			
+			$temp_depth_level_1 = $arItem["ITEM_INDEX"];			
+			$arMenu[$temp_depth_level_1] = $arItem;		
+		}		
+		if( $arItem["DEPTH_LEVEL"] == 2 )
+		{
+			$temp_depth_level_2 = $arItem["ITEM_INDEX"];
+			$arMenu[$temp_depth_level_1]["ITEMS"][$temp_depth_level_2] = $arItem;			
+		}
+		if( $arItem["DEPTH_LEVEL"] == 3 )
+		{
+			$temp_depth_level_3 = $arItem["ITEM_INDEX"];
+			$arMenu[$temp_depth_level_1]["ITEMS"][$temp_depth_level_2]["ITEMS"][$temp_depth_level_3] = $arItem;			
+		}	
+	}	
+	
+	$arResult = $arMenu;
+	
 ?>

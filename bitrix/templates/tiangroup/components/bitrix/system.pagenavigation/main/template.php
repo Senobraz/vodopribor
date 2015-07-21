@@ -23,20 +23,30 @@ $strNavQueryStringFull = ($arResult["NavQueryString"] != "" ? "?".$arResult["Nav
 
 ?>
 
-<ul class="pagination">
+<div class="pagination">
+	<ul class="pager">
 <?if($arResult["bDescPageNumbering"] === true):?>	
 	
 <?else: ?>
-	
+	<? if ($arResult["NavPageNomer"] > 1): ?>
+	<li class="back-page"><a class="forum-page-previous" href="<?=$arResult["sUrlPath"]?>?<?=$strNavQueryString?>PAGEN_<?=$arResult["NavNum"]?>=<?=($arResult["NavPageNomer"]-1)?>"></a></li>
+	<? endif ?>
+		
 	<?while($arResult["nStartPage"] <= $arResult["nEndPage"]):?>	
 		<?if ($arResult["nStartPage"] == $arResult["NavPageNomer"]):?>		
-		<li class="active"><a href="<?=$arResult["sUrlPath"]?><?=$strNavQueryStringFull?>"><?=$arResult["nStartPage"]?></a></li>
+		<li><a  class="active" href="<?=$arResult["sUrlPath"]?><?=$strNavQueryStringFull?>"><?=$arResult["nStartPage"]?></a></li>
 		<?elseif($arResult["nStartPage"] == 1 && $arResult["bSavePage"] == false):?>			
 			<li><a href="<?=$arResult["sUrlPath"]?>"><?=$arResult["nStartPage"]?></a></li>			
 		<?else:?>			
 			<li><a href="?PAGEN_<?=$arResult["NavNum"]?>=<?=$arResult["nStartPage"]?>"><?=$arResult["nStartPage"]?></a></li>
-		<?endif?>
+		<?endif?>	
 		<?$arResult["nStartPage"]++?>
-	<?endwhile?>	
+	<?endwhile?>
+			
+	<? if($arResult["NavPageNomer"] < $arResult["NavPageCount"]): ?>
+	<li class="up-page"><a class="forum-page-next" href="<?=$arResult["sUrlPath"]?>?<?=$strNavQueryString?>PAGEN_<?=$arResult["NavNum"]?>=<?=($arResult["NavPageNomer"]+1)?>"></a></li>
+	<? endif ?>
+	
 <?endif?>
-</ul>
+	</ul>
+</div>

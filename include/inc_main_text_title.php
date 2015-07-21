@@ -1,0 +1,1 @@
+<a href="/o-kompanii/">О нас</a>

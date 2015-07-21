@@ -1,5 +1,8 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 IncludeTemplateLangFile(__FILE__);
+
+$isMainPage = $APPLICATION->GetCurPage() === SITE_DIR;
+
 ?>
 <!doctype html>  
 <html>
@@ -12,6 +15,7 @@ IncludeTemplateLangFile(__FILE__);
 	<?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH."/assets/css/jquery.bxslider.css")?>
 	<?$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH."/assets/css/jquery.fancybox.css")?>
 	
+	<link rel="shortcut icon" href="<?= SITE_TEMPLATE_PATH ?>/favicon.ico" type="image/x-icon">
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500,700&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
 	
@@ -35,27 +39,8 @@ IncludeTemplateLangFile(__FILE__);
 <body>
 <?$APPLICATION->ShowPanel()?>
 <div class="main">	
-	<header>
+	<header class="<?= $isMainPage ? "" : "inner" ?>">
 		<div class="top-nav">
-<!--			<ul>
-				<li><a href="">О компании</a>
-					<ul>
-						<li><a href="">История</a></li>
-						<li><a href="">Объекты</a></li>
-						<li><a href="">Видеогалерея</a></li>
-						<li><a href="">Партнеры</a></li>
-						<li><a href="">Вакансии</a></li>
-						<li><a href="">Свидетельства</a></li>
-					</ul>
-				</li>
-				<li><a href="">Производство</a></li>
-				<li><a href="">Услуги</a></li>
-				<li><a href="">Комплектация</a></li>
-				<li><a href="">Опросные листы</a></li>
-				<li><a href="">Цены</a></li>
-				<li><a href="">Полезная информация</a></li>
-				<li><a href="">Контакты </a></li>
-			</ul>-->
 			<?$APPLICATION->IncludeComponent(
 				"bitrix:menu",
 				"top",
@@ -76,12 +61,79 @@ IncludeTemplateLangFile(__FILE__);
 		</div>
 		<div class="middle-head">
 			<div class="logo-wrap">
-				<a href="" class="logo"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/logo.png"></a>
-				<div class="logo-desc">
-					<b>Энергоэффективные системы</b> <br> разработка и внедрение, <br> обслуживание и ремонт
+				<a href="/" class="logo">
+					<?				
+					$APPLICATION->IncludeFile(SITE_DIR."inc_logo.php", Array(), Array(
+						"MODE" => "html",                             
+						"NAME" => GetMessage("DEF_LOGO"),					
+						));
+					?>
+				</a>
+				<div class="logo-desc">		
+					
+					<?				
+					$APPLICATION->IncludeFile(SITE_DIR."inc_slogan.php", Array(), Array(
+						"MODE" => "html",                             
+						"NAME" => GetMessage("DEF_SLOGAN"),					
+						));
+					?>				
 				</div>
 			</div>
-			<a class="top-addr" href=""><span>Карта проезда</span></a>
-			<div class="top-phone">+7 (351) 729-99-01</div>
+			<a class="top-addr" href=""><span><?=  GetMessage("DEF_MAP_LINK") ?></span></a>
+			<div class="top-phone">
+				<?				
+					$APPLICATION->IncludeFile(SITE_DIR."inc_phone.php", Array(), Array(
+						"MODE" => "html",                             
+						"NAME" => GetMessage("DEF_PHONE"),					
+						));
+				?>	
+			</div>
 		</div>
 	</header>
+	<? if ( !$isMainPage ) : ?>
+	<div class="content">
+		<div class="wrapper">
+			<ul class="breadcrumps">
+			<?$APPLICATION->IncludeComponent(
+				"bitrix:breadcrumb",
+				"main",
+				Array(
+					"START_FROM" => "0",
+					"PATH" => "",
+					"SITE_ID" => "-"
+				),
+				false
+			);?>
+			</ul>			
+			<h1><?$APPLICATION->ShowTitle(false)?></h1>
+			<div class="cont-wrap">
+				<div class="cont-left">
+					<div class="right-menu">
+						<?$APPLICATION->IncludeComponent(
+							"bitrix:menu",
+							"left",
+							Array(
+								"ROOT_MENU_TYPE" => "left",
+								"MAX_LEVEL" => "3",
+								"CHILD_MENU_TYPE" => "left",
+								"USE_EXT" => "Y",
+								"DELAY" => "N",
+								"ALLOW_MULTI_SELECT" => "N",
+								"MENU_CACHE_TYPE" => "A",
+								"MENU_CACHE_TIME" => "3600",
+								"MENU_CACHE_USE_GROUPS" => "Y",
+								"MENU_CACHE_GET_VARS" => array()
+							),
+							false
+						);?>
+					</div>
+					<div class="right-info">
+						<?				
+							$APPLICATION->IncludeFile(SITE_DIR."/include/inc_info_left_column.php", Array(), Array(
+								"MODE" => "html"	
+								));
+						?>
+					</div>
+				</div>
+				<div class="cont-right">			
+	<? endif; ?>
