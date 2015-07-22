@@ -1,4 +1,5 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
+<? $this->setFrameMode(true); ?>
 <div class="big-title">
 	<a href="<?= $arParams["DETAIL_PAGE_LIST"] ?>"><?= $arParams["PAGER_TITLE"] ?></a>
 </div>

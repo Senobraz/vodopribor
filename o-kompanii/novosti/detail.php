@@ -40,7 +40,8 @@ $APPLICATION->SetTitle("Новость");
 	"DISPLAY_BOTTOM_PAGER" => "Y",
 	"PAGER_TITLE" => "Страница",
 	"PAGER_SHOW_ALL" => "Y",
-	"AJAX_OPTION_ADDITIONAL" => ""
+	"AJAX_OPTION_ADDITIONAL" => "",
+	"DETAIL_PAGE_LIST" => "/o-kompanii/novosti/"
 	),
 	false
 );?>

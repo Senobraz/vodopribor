@@ -1,4 +1,5 @@
 <?if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
+<? $this->setFrameMode(true); ?>
 <?if (empty($arResult)) return;?>
 <? function show_html_ul_menu( $arItems ) { ?>
 <ul>	
