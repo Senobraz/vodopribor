@@ -5,7 +5,7 @@ $arTemplateParameters = array(
    "DETAIL_PAGE_LIST" => array(
         "NAME" => GetMessage("PARAM_DETAIL_PAGE_LIST"),
         "TYPE" => "STRING",
-        "DEFAULT" => "N",
+        "DEFAULT" => "",
     ),
 );
 

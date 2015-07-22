@@ -13,7 +13,7 @@
 		<?if($picture = $arItem['PREVIEW_PICTURE']):?>
 		<a href="<?=$arItem["DETAIL_PAGE_URL"]?>" class="img">			
 			<?$file = CFile::ResizeImageGet($picture['ID'], array('width'=>96, 'height'=>65), BX_RESIZE_IMAGE_EXACT, true); ?>
-			<img src="<?=$file['src']?>" alt="<?= htmlspecialchars($arItem["NAME"]) ?>" />				
+			<img src="<?=$file['src']?>" alt="<?= htmlspecialcharsbx($arItem["NAME"]) ?>" />				
 		</a>
 		<?endif?>	
 		<div class="date"><?=$arItem['DISPLAY_ACTIVE_FROM']?></div>

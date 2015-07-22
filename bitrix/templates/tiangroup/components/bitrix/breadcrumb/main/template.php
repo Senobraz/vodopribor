@@ -9,7 +9,7 @@ $strReturn = '<li><a href="'.SITE_DIR.'">'.GetMessage("BREADCRUMB_MAIN").'</a></
 $num_items = count($arResult);
 for($index = 0, $itemSize = $num_items; $index < $itemSize; $index++)
 {
-	$title = htmlspecialcharsex($arResult[$index]["TITLE"]);
+	$title = htmlspecialcharsbx($arResult[$index]["TITLE"]);
 	
 	if($arResult[$index]["LINK"] <> "" && $index<(count($arResult)-1))
 		$strReturn .= '<li><a href="'.$arResult[$index]["LINK"].'" title="'.$title.'">'.$title.'</a></li> ';

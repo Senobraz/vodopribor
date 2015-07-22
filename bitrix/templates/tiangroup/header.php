@@ -115,7 +115,7 @@ $isMainPage = $APPLICATION->GetCurPage() === SITE_DIR;
 							Array(
 								"ROOT_MENU_TYPE" => "left",
 								"MAX_LEVEL" => "3",
-								"CHILD_MENU_TYPE" => "left",
+								"CHILD_MENU_TYPE" => "inleft",
 								"USE_EXT" => "Y",
 								"DELAY" => "N",
 								"ALLOW_MULTI_SELECT" => "N",

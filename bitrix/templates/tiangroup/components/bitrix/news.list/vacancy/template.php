@@ -39,7 +39,6 @@
 		</div>	
 	</div>
 	<?endforeach?>	
-</div>
 <?=$arResult['NAV_STRING']?>
 <? else: ?>
 <p class="no-found"><?= GetMessage("VACANCY_NOT_FOUND") ?></p>

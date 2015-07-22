@@ -22,7 +22,7 @@
 		{
 			$temp_depth_level_3 = $arItem["ITEM_INDEX"];
 			$arMenu[$temp_depth_level_1]["ITEMS"][$temp_depth_level_2]["ITEMS"][$temp_depth_level_3] = $arItem;			
-		}	
+		}
 	}	
 	
 	$arResult = $arMenu;
