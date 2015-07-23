@@ -18,6 +18,18 @@ $arUrlRewrite = array(
 		"ID" => "",
 		"PATH" => "/o-kompanii/obekty/index.php",
 	),
+	array(
+		"CONDITION" => "#^/poleznaya-informatsiya/faq/([0-9a-zA-Z\\-]+)(\\\\?(.*))#",
+		"RULE" => "SECTION_CODE=\$1&\$2",
+		"ID" => "",
+		"PATH" => "/poleznaya-informatsiya/faq/index.php",
+	),
+	array(
+		"CONDITION" => "#^/services/([0-9a-zA-Z\\-]+)(\\\\?(.*))#",
+		"RULE" => "SECTION_CODE=\$1&\$2",
+		"ID" => "",
+		"PATH" => "/services/detail.php",
+	),
 );
 
 ?>

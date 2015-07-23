@@ -32,8 +32,16 @@ $isMainPage = $APPLICATION->GetCurPage() === SITE_DIR;
 	<?$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/assets/js/pretty.js')?>
 	<?$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/assets/js/jquery.fitvids.js')?>
 	<?$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/assets/js/selectize.js')?>
-	<?$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/assets/js/jquery.mask.min.js')?>
-	<?$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/assets/js/action.js')?>
+	<?$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/assets/js/jquery.mask.min.js')?>	
+	
+	<?  
+	if(LANG_CHARSET == 'windows-1251') :
+		$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/assets/js/action-v2.js');
+	else:
+		$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/assets/js/action.js');
+	endif 
+	?>	
+	
 	<?$APPLICATION->ShowHead()?>
 </head> 
 <body>
