@@ -13,7 +13,8 @@
 	<?endforeach?> 
 </ul>
 <? } ?>
+<div class="right-menu">
 <? echo show_html_ul_menu($arResult) ?>
-
+</div>
 
 

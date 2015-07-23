@@ -115,26 +115,24 @@ $isMainPage = $APPLICATION->GetCurPage() === SITE_DIR;
 			</ul>			
 			<h1><?$APPLICATION->ShowTitle(false)?></h1>
 			<div class="cont-wrap">
-				<div class="cont-left">
-					<div class="right-menu">
-						<?$APPLICATION->IncludeComponent(
-							"bitrix:menu",
-							"left",
-							Array(
-								"ROOT_MENU_TYPE" => "left",
-								"MAX_LEVEL" => "3",
-								"CHILD_MENU_TYPE" => "inleft",
-								"USE_EXT" => "Y",
-								"DELAY" => "N",
-								"ALLOW_MULTI_SELECT" => "N",
-								"MENU_CACHE_TYPE" => "A",
-								"MENU_CACHE_TIME" => "3600",
-								"MENU_CACHE_USE_GROUPS" => "Y",
-								"MENU_CACHE_GET_VARS" => array()
-							),
-							false
-						);?>
-					</div>
+				<div class="cont-left">					
+					<?$APPLICATION->IncludeComponent(
+						"bitrix:menu",
+						"left",
+						Array(
+							"ROOT_MENU_TYPE" => "left",
+							"MAX_LEVEL" => "3",
+							"CHILD_MENU_TYPE" => "inleft",
+							"USE_EXT" => "Y",
+							"DELAY" => "N",
+							"ALLOW_MULTI_SELECT" => "N",
+							"MENU_CACHE_TYPE" => "A",
+							"MENU_CACHE_TIME" => "3600",
+							"MENU_CACHE_USE_GROUPS" => "Y",
+							"MENU_CACHE_GET_VARS" => array()
+						),
+						false
+					);?>					
 					<div class="right-info">
 						<?				
 							$APPLICATION->IncludeFile(SITE_DIR."/include/inc_info_left_column.php", Array(), Array(

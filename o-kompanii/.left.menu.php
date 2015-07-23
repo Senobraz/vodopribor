@@ -1,6 +1,13 @@
 <?
 $aMenuLinks = Array(
 	Array(
+		"История", 
+		"/o-kompanii/history/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
 		"Объекты", 
 		"/o-kompanii/obekty/", 
 		Array(), 
@@ -48,6 +55,6 @@ $aMenuLinks = Array(
 		Array(), 
 		Array(), 
 		"" 
-	)
+	)	
 );
 ?>
