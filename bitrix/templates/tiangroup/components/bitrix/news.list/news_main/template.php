@@ -9,13 +9,15 @@
 		$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
 		$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));			
 	?>
-	<div class="news-item" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
-		<?if($picture = $arItem['PREVIEW_PICTURE']):?>
-		<a href="<?=$arItem["DETAIL_PAGE_URL"]?>" class="img">			
+	<div class="news-item" id="<?=$this->GetEditAreaId($arItem['ID']);?>">		
+		<a href="<?=$arItem["DETAIL_PAGE_URL"]?>" class="img">
+			<?if($picture = $arItem['PREVIEW_PICTURE']):?>
 			<?$file = CFile::ResizeImageGet($picture['ID'], array('width'=>96, 'height'=>65), BX_RESIZE_IMAGE_EXACT, true); ?>
 			<img src="<?=$file['src']?>" alt="<?= htmlspecialcharsbx($arItem["NAME"]) ?>" />				
-		</a>
-		<?endif?>	
+			<? else: ?>
+			<img src="<?=SITE_TEMPLATE_PATH ?>/assets/images/nofoto/new_index.jpg" alt="<?= htmlspecialcharsbx($arItem["NAME"]) ?>" />
+			<?endif?>
+		</a>			
 		<div class="date"><?=$arItem['DISPLAY_ACTIVE_FROM']?></div>
 		<a href="<?=$arItem["DETAIL_PAGE_URL"]?>" class="title"><?=$arItem["NAME"]?></a>
 		<div class="desc">

@@ -4,169 +4,55 @@ $APPLICATION->SetTitle("УралВодоПрибор");
 ?>
 
 <div class="main-bg">
-	<div class="slider">
-		<div class="vert-sl">
-			<ul>
-				<li>
-					<a  data-action="1" class="active">
-						<div class="img">
-							<div>
-								<img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/content/vertical.png">
-							</div>
-						</div>
-						<div class="desc">
-							<span>Автоматизированные насосные установки </span>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a  data-action="2">
-						<div class="img">
-							<div>
-								<img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/content/vertical.png">
-							</div>
-						</div>
-						<div class="desc">
-							<span>Индивидуальные тепловые пункты</span>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a  data-action="3">
-						<div class="img">
-							<div>
-								<img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/content/vertical.png">
-							</div>
-						</div>
-						<div class="desc">
-							<span>Автоматизированные насосные установки </span>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a data-action="4">
-						<div class="img">
-							<div>
-								<img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/content/vertical.png">
-							</div>
-						</div>
-						<div class="desc">
-							<span>Автоматизированные насосные установки </span>
-						</div>
-					</a>
-				</li>
-			</ul>
-		</div>
-		<div class="horiz-sl">
-			<div class="sl-object visible"  data-slider="1">
-				<ul id="obj1">
-					<li>
-						<a href="">
-							<img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/content/slider.jpg">
-							<div class="title"><span>Установка АНУ АЦМС 4066-4125</span></div>						
-						</a>
-					</li>
-					<li>
-						<a href="">
-							<img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/content/slider.jpg">
-							<div class="title"><span>Установка АНУ АЦМС </span></div>						
-						</a>
-					</li>
-				</ul>
-				<div class="slider-counter"></div>
-			</div>
-			<div class="sl-object"  data-slider="2">
-				<ul id="obj2">
-					<li>
-						<a href="">
-							<img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/content/slider.jpg">
-							<div class="title"><span>2</span></div>						
-						</a>
-					</li>
-					<li>
-						<a href="">
-							<img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/content/slider.jpg">
-							<div class="title"><span>Установка АНУ АЦМС </span></div>						
-						</a>
-					</li>
-				</ul>
-				<div class="slider-counter"></div>
-			</div>
-			<div class="sl-object"  data-slider="3">
-				<ul id="obj3">
-					<li>
-						<a href="">
-							<img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/content/slider.jpg">
-							<div class="title"><span>Установка АНУ АЦМС 4066-4125</span></div>						
-						</a>
-					</li>
-					<li>
-						<a href="">
-							<img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/content/slider.jpg">
-							<div class="title"><span>Установка АНУ АЦМС </span></div>						
-						</a>
-					</li>
-				</ul>
-				<div class="slider-counter"></div>
-			</div>
-			<div class="sl-object" data-slider="4">
-				<ul>
-					<li>
-						<a href="">
-							<img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/content/slider.jpg">
-							<div class="title"><span>Установка АНУ АЦМС 4066-4125</span></div>						
-						</a>
-					</li>
-					<li>
-						<a href="">
-							<img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/content/slider.jpg">
-							<div class="title"><span>Установка АНУ АЦМС </span></div>						
-						</a>
-					</li>
-				</ul>
-				<div class="slider-counter"></div>
-			</div>
-		</div>
-	</div>
+	<?  $APPLICATION->IncludeComponent(
+		"bitrix:catalog.section.list",
+		"slider",
+		Array(
+			"COMPONENT_TEMPLATE" => "objects",
+			"IBLOCK_TYPE" => "ittian_content",
+			"IBLOCK_ID" => "2",
+			"SECTION_ID" => "",
+			"SECTION_CODE" => "",
+			"COUNT_ELEMENTS" => "Y",
+			"TOP_DEPTH" => "2",
+			"SECTION_FIELDS" => array("NAME","DESCRIPTION","PICTURE",""),
+			"SECTION_USER_FIELDS" => array("","UF_DESCRIPTION",""),
+			"VIEW_MODE" => "LINE",
+			"SHOW_PARENT_NAME" => "Y",
+			"SECTION_URL" => "",
+			"CACHE_TYPE" => "A",
+			"CACHE_TIME" => "36000000",
+			"CACHE_GROUPS" => "Y",
+			"ADD_SECTIONS_CHAIN" => "Y"
+		)
+	);?>
 	<div class="our">
 		<div class="wrapper">
-			<div class="big-title"><a href="">Спецпредложения</a></div>
-			<div class="our-slider">
-				<div class="our-wr">
-					<ul>
-						<li>
-							<a href="">
-								<div class="img"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/content/prod.jpg"></div>
-								Производство энергосберегающего оборудования 
-							</a>
-						</li>
-						<li>
-							<a href="">
-								<div class="img"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/content/prod.jpg"></div>
-								Производство энергосберегающего оборудования 
-							</a>
-						</li>
-						<li>
-							<a href="">
-								<div class="img"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/content/prod.jpg"></div>
-								Производство энергосберегающего оборудования 
-							</a>
-						</li>
-						<li>
-							<a href="">
-								<div class="img"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/content/prod.jpg"></div>
-								Производство энергосберегающего оборудования 
-							</a>
-						</li>
-						<li>
-							<a href="">
-								<div class="img"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/content/prod.jpg"></div>
-								Производство энергосберегающего оборудования 
-							</a>
-						</li>
-					</ul>
-				</div>
+			<div class="big-title">
+				<a href="/services/"><?= GetMessage("DEF_SERVICE_TITLE_BLOCK") ?></a>
 			</div>
+			<?  $APPLICATION->IncludeComponent(
+				"bitrix:catalog.section.list",
+				"services_main",
+				Array(
+					"COMPONENT_TEMPLATE" => "catalog_main",
+					"IBLOCK_TYPE" => "ittian_content",
+					"IBLOCK_ID" => "9",
+					"SECTION_ID" => "",
+					"SECTION_CODE" => "",
+					"COUNT_ELEMENTS" => "Y",
+					"TOP_DEPTH" => "2",
+					"SECTION_FIELDS" => array("NAME","PICTURE",""),
+					"SECTION_USER_FIELDS" => array(""),
+					"VIEW_MODE" => "LINE",
+					"SHOW_PARENT_NAME" => "Y",
+					"SECTION_URL" => "",
+					"CACHE_TYPE" => "A",
+					"CACHE_TIME" => "36000000",
+					"CACHE_GROUPS" => "Y",
+					"ADD_SECTIONS_CHAIN" => "Y"
+				)
+			);?>
 		</div>
 	</div>
 	<div class="products">
@@ -196,62 +82,28 @@ $APPLICATION->SetTitle("УралВодоПрибор");
 					"ADD_SECTIONS_CHAIN" => "Y"
 				)
 			);?>
-			<div class="bot-pod">
-				<a href="">
-					<div class="img"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/content/prod/mini1.png"></div>
-					<div class="desc">
-						<span>Водосчетчики и первичные расходомеры</span>
-					</div>
-				</a>
-				<a href="">
-					<div class="img"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/content/prod/mini2.png"></div>
-					<div class="desc">
-						<span>Насосы</span>
-					</div>
-				</a>
-				<a href="">
-					<div class="img"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/content/prod/mini3.png"></div>
-					<div class="desc">
-						<span>Фильтры</span>
-					</div>
-				</a>
-				<a href="">
-					<div class="img"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/content/prod/mini4.png"></div>
-					<div class="desc">
-						<span>Автоматика для отопления, ГВС и вентиляции</span>
-					</div>
-				</a>
-				<a href="">
-					<div class="img"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/content/prod/mini5.png"></div>
-					<div class="desc">
-						<span>Запорная арматура</span>
-					</div>
-				</a>
-				<a href="">
-					<div class="img"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/content/prod/mini6.png"></div>
-					<div class="desc">
-						<span>Вычислители</span>
-					</div>
-				</a>
-				<a href="">
-					<div class="img"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/content/prod/mini7.png"></div>
-					<div class="desc">
-						<span>КИП</span>
-					</div>
-				</a>
-				<a href="">
-					<div class="img"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/content/prod/mini8.png"></div>
-					<div class="desc">
-						<span>Фитинги, отводы, фланцы</span>
-					</div>
-				</a>
-				<a href="">
-					<div class="img"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/content/prod/mini9.png"></div>
-					<div class="desc">
-						<span>Теплосчетчики</span>
-					</div>
-				</a>
-			</div>
+			<?  $APPLICATION->IncludeComponent(
+				"bitrix:catalog.section.list",
+				"equipment_main",
+				Array(
+					"COMPONENT_TEMPLATE" => "catalog_main",
+					"IBLOCK_TYPE" => "ittian_content",
+					"IBLOCK_ID" => "13",
+					"SECTION_ID" => "",
+					"SECTION_CODE" => "",
+					"COUNT_ELEMENTS" => "Y",
+					"TOP_DEPTH" => "2",
+					"SECTION_FIELDS" => array("NAME","PICTURE",""),
+					"SECTION_USER_FIELDS" => array(""),
+					"VIEW_MODE" => "LINE",
+					"SHOW_PARENT_NAME" => "Y",
+					"SECTION_URL" => "",
+					"CACHE_TYPE" => "A",
+					"CACHE_TIME" => "36000000",
+					"CACHE_GROUPS" => "Y",
+					"ADD_SECTIONS_CHAIN" => "Y"
+				)
+			);?>
 		</div>
 	</div>
 	<div class="about">

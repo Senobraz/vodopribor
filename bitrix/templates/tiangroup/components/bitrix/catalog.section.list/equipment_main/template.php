@@ -26,22 +26,24 @@ if ('Y' == $arParams['SHOW_PARENT_NAME'] && 0 < $arResult['SECTION']['ID'])
 }
 
 if (0 < $arResult["SECTIONS_COUNT"]) : ?>
-<div class="catalog">
+<div class="bot-pod">
 	<? foreach ($arResult['SECTIONS'] as $arSection) : ?> 
 	<?	
 		$this->AddEditAction($arSection['ID'], $arSection['EDIT_LINK'], $strSectionEdit);
 		$this->AddDeleteAction($arSection['ID'], $arSection['DELETE_LINK'], $strSectionDelete, $arSectionDeleteParams);
-	?>		
-	<a href="<?=$arSection["SECTION_PAGE_URL"]?>" id="<?=$this->GetEditAreaId($arSection['ID']);?>" class="cat-item">
+	?>
+	<a href="<?=$arSection["SECTION_PAGE_URL"]?>" id="<?=$this->GetEditAreaId($arSection['ID']);?>">
 		<div class="img">
 			<?if($picture = $arSection['PICTURE']):?>
-			<?$file = CFile::ResizeImageGet($picture['ID'], array('width'=>190, 'height'=>190), BX_RESIZE_IMAGE_EXACT, true); ?>
+			<?$file = CFile::ResizeImageGet($picture['ID'], array('width'=>88, 'height'=>88), BX_RESIZE_IMAGE_EXACT, true); ?>
 			<img src="<?=$file['src']?>" alt="<?= htmlspecialcharsbx($arSection["NAME"]) ?>" />
 			<? else: ?>
-			<img src="<?=SITE_TEMPLATE_PATH ?>/assets/images/nofoto/catalog.jpg" alt="<?= htmlspecialcharsbx($arSection["NAME"]) ?>" />
+			<img src="<?=SITE_TEMPLATE_PATH ?>/assets/images/nofoto/complekt_index.jpg" alt="<?= htmlspecialcharsbx($arSection["NAME"]) ?>" />
 			<?endif?>
 		</div>
-		<div class="title"><?= $arSection["NAME"] ?></div>
+		<div class="desc">
+			<span><?= $arSection["NAME"] ?></span>
+		</div>
 	</a>
 	<?endforeach ?>		
 </div>

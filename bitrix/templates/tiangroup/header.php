@@ -87,7 +87,7 @@ $isMainPage = $APPLICATION->GetCurPage() === SITE_DIR;
 					?>				
 				</div>
 			</div>
-			<a class="top-addr" href=""><span><?=  GetMessage("DEF_MAP_LINK") ?></span></a>
+			<a class="top-addr" href="/contacts/"><span><?=  GetMessage("DEF_MAP_LINK") ?></span></a>
 			<div class="top-phone">
 				<?				
 					$APPLICATION->IncludeFile(SITE_DIR."inc_phone.php", Array(), Array(

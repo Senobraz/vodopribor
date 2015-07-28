@@ -12,12 +12,16 @@
 		$link .= $arUrl["host"] ? $arUrl["host"] : $arUrl["path"] ;		
 	?>
 	<div class="partner" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
-		<?if($picture = $arItem['PREVIEW_PICTURE']):?>	
+		
 		<a href="<?= $link ?>" class="img">
+			<?if($picture = $arItem['PREVIEW_PICTURE']):?>	
 			<?$file = CFile::ResizeImageGet($picture['ID'], array('width'=>232, 'height'=>148), BX_RESIZE_IMAGE_EXACT, true); ?>
 			<img src="<?=$file['src']?>" alt="<?= htmlspecialcharsbx($arItem["NAME"]) ?>" alt="<?= htmlspecialcharsbx($arItem["NAME"]) ?>" />
+			<? else: ?>
+			<img src="<?=SITE_TEMPLATE_PATH ?>/assets/images/nofoto/partners.jpg" alt="<?= htmlspecialcharsbx($arItem["NAME"]) ?>" />
+			<?endif?>
 		</a>
-		<?endif?>
+		
 		<a href="" class="title"><?= $arItem["NAME"] ?></a>
 		<div class="desc">
 			<?=$arItem["PREVIEW_TEXT"]?>

@@ -37,6 +37,8 @@ if (0 < $arResult["SECTIONS_COUNT"]) : ?>
 			<?if($picture = $arSection['PICTURE']):?>
 			<?$file = CFile::ResizeImageGet($picture['ID'], array('width'=>220, 'height'=>155), BX_RESIZE_IMAGE_EXACT, true); ?>
 			<img src="<?=$file['src']?>" alt="<?= htmlspecialcharsbx($arSection["NAME"]) ?>" />
+			<? else: ?>
+			<img src="<?=SITE_TEMPLATE_PATH ?>/assets/images/nofoto/prod_index.jpg" alt="<?= htmlspecialcharsbx($arSection["NAME"]) ?>" />
 			<?endif?>
 		</div>
 		<?= $arSection["NAME"] ?>

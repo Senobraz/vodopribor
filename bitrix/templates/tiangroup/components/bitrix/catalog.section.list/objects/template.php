@@ -33,12 +33,15 @@ if (0 < $arResult["SECTIONS_COUNT"]) : ?>
 		$this->AddDeleteAction($arSection['ID'], $arSection['DELETE_LINK'], $strSectionDelete, $arSectionDeleteParams);
 	?>	
 	<div class="obj-item" id="<?=$this->GetEditAreaId($arSection['ID']);?>">		
-		<?if($picture = $arSection['PICTURE']):?>	
+		
 		<a href="<?=$arSection["SECTION_PAGE_URL"]?>" class="img">
+			<?if($picture = $arSection['PICTURE']):?>	
 			<?$file = CFile::ResizeImageGet($picture['ID'], array('width'=>232, 'height'=>232), BX_RESIZE_IMAGE_EXACT, true); ?>
 			<img src="<?=$file['src']?>" alt="<?= htmlspecialcharsbx($arSection["NAME"]) ?>" />
-		</a>
-		<?endif?>		
+			<? else: ?>
+			<img src="<?=SITE_TEMPLATE_PATH ?>/assets/images/nofoto/albom.jpg" alt="<?= htmlspecialcharsbx($arSection["NAME"]) ?>" />
+			<?endif?>
+		</a>				
 		<div class="middle">
 			<div class="photo">
 				<div class="ph-num"><?= $arSection["ELEMENT_CNT"] ?></div>

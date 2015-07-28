@@ -7,13 +7,15 @@
 		$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
 		$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));			
 	?>
-	<div class="n-item" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
-		<?if($picture = $arItem['PREVIEW_PICTURE']):?>	
+	<div class="n-item" id="<?=$this->GetEditAreaId($arItem['ID']);?>">		
 		<a href="<?=$arItem["DETAIL_PAGE_URL"]?>" class="img">
+			<?if($picture = $arItem['PREVIEW_PICTURE']):?>	
 			<?$file = CFile::ResizeImageGet($picture['ID'], array('width'=>294, 'height'=>200), BX_RESIZE_IMAGE_EXACT, true); ?>
 			<img src="<?=$file['src']?>" alt="<?= htmlspecialcharsbx($arItem["NAME"]) ?>" />
-		</a>
-		<?endif?>
+			<? else: ?>
+			<img src="<?=SITE_TEMPLATE_PATH ?>/assets/images/nofoto/new.jpg" alt="<?= htmlspecialcharsbx($arItem["NAME"]) ?>" />
+			<?endif?>
+		</a>		
 		<a href="<?=$arItem["DETAIL_PAGE_URL"]?>" class="title"><?= $arItem["NAME"] ?></a>
 		<div class="desc">
 			<?=$arItem["PREVIEW_TEXT"]?>

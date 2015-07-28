@@ -13,4 +13,5 @@ $MESS["DEF_DEVELOER"]='Интернет-агентство Tian Group:<br>
 			<a href="http://www.it-tian.ru/">создание</a> и <a href="http://www.it-tian.ru/">продвижение сайтов Челябинск</a>';
 
 $MESS["DEF_CATALOG_TITLE_BLOCK"]="Наша продукция";
+$MESS["DEF_SERVICE_TITLE_BLOCK"]="Наши услуги";
 ?>

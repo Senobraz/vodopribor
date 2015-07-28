@@ -3,9 +3,9 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Îáúåêòû");
 ?><?$isSections = $APPLICATION->IncludeComponent(
 	"bitrix:catalog.section.list",
-	"catalog_objects",
+	"objects",
 	Array(
-		"COMPONENT_TEMPLATE" => "catalog_objects",
+		"COMPONENT_TEMPLATE" => "objects",
 		"IBLOCK_TYPE" => "ittian_content",
 		"IBLOCK_ID" => "7",
 		"SECTION_ID" => $_REQUEST["SECTION_ID"],
