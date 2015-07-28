@@ -171,25 +171,31 @@ $APPLICATION->SetTitle("УралВодоПрибор");
 	</div>
 	<div class="products">
 		<div class="wrapper">
-			<div class="big-title"><a href="">Наша продукция</a></div>
-			<div class="top-prod">
-				<a href="">
-					<div class="img"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/content/prod/big1.png"></div>
-					Теплообменники
-				</a>
-				<a href="">
-					<div class="img"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/content/prod/big2.png"></div>
-					Станции и шкафы управления
-				</a>
-				<a href="">
-					<div class="img"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/content/prod/big3.png"></div>
-					Автоматизированные насосные установки
-				</a>
-				<a href="">
-					<div class="img"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/content/prod/big4.png"></div>
-					Индивидуальные тепловые пункты
-				</a>
+			<div class="big-title">
+				<a href="/catalog/"><?= GetMessage("DEF_CATALOG_TITLE_BLOCK") ?></a>
 			</div>
+			<?  $APPLICATION->IncludeComponent(
+				"bitrix:catalog.section.list",
+				"catalog_main",
+				Array(
+					"COMPONENT_TEMPLATE" => "catalog_main",
+					"IBLOCK_TYPE" => "ittian_content",
+					"IBLOCK_ID" => "1",
+					"SECTION_ID" => "",
+					"SECTION_CODE" => "",
+					"COUNT_ELEMENTS" => "Y",
+					"TOP_DEPTH" => "2",
+					"SECTION_FIELDS" => array("NAME","PICTURE",""),
+					"SECTION_USER_FIELDS" => array(""),
+					"VIEW_MODE" => "LINE",
+					"SHOW_PARENT_NAME" => "Y",
+					"SECTION_URL" => "",
+					"CACHE_TYPE" => "A",
+					"CACHE_TIME" => "36000000",
+					"CACHE_GROUPS" => "Y",
+					"ADD_SECTIONS_CHAIN" => "Y"
+				)
+			);?>
 			<div class="bot-pod">
 				<a href="">
 					<div class="img"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/content/prod/mini1.png"></div>

@@ -1,7 +1,7 @@
 <?if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
 <? $this->setFrameMode(true); ?>
 <?if (empty($arResult)) return;?>
-<ul>
+<ul class="top-menu">
 <?foreach($arResult as $arItem){?>
 
     <li class="<?= $arItem["SELECTED"] ? "active" : "" ?>">       

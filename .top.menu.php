@@ -23,7 +23,7 @@ $aMenuLinks = Array(
 	),
 	Array(
 		"Комплектация", 
-		"/komplektatsiya/", 
+		"/equipment/", 
 		Array(), 
 		Array(), 
 		"" 

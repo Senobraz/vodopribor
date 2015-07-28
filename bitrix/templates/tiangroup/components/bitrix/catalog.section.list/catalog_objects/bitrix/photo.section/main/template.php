@@ -1,7 +1,9 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
 <? $this->setFrameMode(true); ?>
 <? if( count($arResult["ITEMS"]) ) : ?>
-	<?= $arResult["DESCRIPTION"] ?>
+	<div class="obj-content">
+		<?= $arResult["DESCRIPTION"] ?>
+	</div>	
 	<div class="obj-inner">
 		<?foreach($arResult["ITEMS"] as $arItem):?>
 		<?
