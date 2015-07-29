@@ -11,7 +11,7 @@
 	?>
 	<?if($picture = $arItem['PREVIEW_PICTURE']):?>
 	<a href="<?= $picture["SRC"] ?>" class="fnc" rel="sv<?= $arParams["SECTION_ID"] ?>" title="<?= htmlspecialcharsbx($arItem["NAME"]) ?>" id="<?=$this->GetEditAreaId($arItem['ID']);?>">	
-		<?$file = CFile::ResizeImageGet($picture['ID'], array('width'=>294, 'height'=>209), BX_RESIZE_IMAGE_EXACT, true); ?>
+		<?$file = CFile::ResizeImageGet($picture['ID'], array('width'=>494, 'height'=>209), BX_RESIZE_IMAGE_PROPORTIONAL , true); ?>
 		<img src="<?=$file['src']?>" alt="<?= htmlspecialcharsbx($arItem["NAME"]) ?>" />		
 	</a>
 	<?endif?>

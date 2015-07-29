@@ -15,7 +15,7 @@
 	</p>
 
 <?}?>
-<div class="in-date"><?=$arItem['DISPLAY_ACTIVE_FROM']?></div>
+<div class="in-date"><?=$arResult['DISPLAY_ACTIVE_FROM']?></div>
 <div class="final nw">
 	<a href="<?= $arParams["DETAIL_PAGE_LIST"] ?>" class="button">Посмотреть список новостей</a>
 </div>
