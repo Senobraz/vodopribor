@@ -8,4 +8,5 @@
 <h3>¬рем€ работы</h3>
 <p>пн-вт: 8.30-17.30 <br> сб-вс: выходной</p>
 <h3>Ёлектронна€ почта</h3>
-<a href="">uwp@chel.surnet.ru</a>
+<a href="mailto:uwp@chel.surnet.ru">uwp@chel.surnet.ru</a>
+

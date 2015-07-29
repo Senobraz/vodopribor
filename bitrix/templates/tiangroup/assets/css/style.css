@@ -208,15 +208,15 @@ header.inner {
     height: 48px;
     margin: 0 auto;
 }
-.top-nav>ul {
+.top-nav ul.top-menu {
     display: table;
     width: 100%;
 }
-.top-nav>ul>li {
+.top-nav ul.top-menu>li {
     display: table-cell;
     position: relative;
 }
-.top-nav>ul>li>a {
+.top-nav ul.top-menu>li>a {
     display: block;
     font-size: 14px;
     line-height: 48px;
@@ -226,16 +226,17 @@ header.inner {
     border-left: 1px solid #44b1e5;
     padding: 0 5px;
 }
-.top-nav>ul>li:last-child>a {
+.top-nav ul.top-menu>li:last-child>a {
     border-right: 1px solid #44b1e5;
 }
-.top-nav>ul>li:hover>a {
+.top-nav ul.top-menu>li:hover>a, .top-nav ul.top-menu>li.active>a {
     color: #2e4757;
     background: #e7eaee;
+    border-color: #e7eaee;
 }
-.top-nav>ul>li>ul {
+.top-nav ul.top-menu>li>ul {
     display: none;
-    width: 173px;
+     width: 193px;
     position: absolute;
     left: 0;
     top: 48px;
@@ -243,10 +244,10 @@ header.inner {
     padding: 16px 0;
     z-index: 300;
 }
-.top-nav>ul>li:hover>ul {
+.top-nav ul.top-menu>li:hover>ul {
     display: block;
 }
-.top-nav>ul>li>ul>li>a {
+.top-nav ul.top-menu>li>ul>li>a {
     display: block;
     padding: 8px 24px;
     color: #2e4757;
@@ -255,7 +256,7 @@ header.inner {
     line-height: 14px;
     font-weight: 500;
 }
-.top-nav>ul>li>ul>li>a:hover {
+.top-nav ul.top-menu>li>ul>li>a:hover {
     color: white;
     background: #2d4656;
 }
@@ -895,10 +896,14 @@ h1 {
     margin: 0 0 34px;
 }
 .cont-left {
-    float: left;
+     width: 336px;
+    display: inline-block
 }
 .cont-right {
-    overflow: hidden;
+     width: 652px;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 16px;
 }
 .right-menu {
     width: 274px;
@@ -1071,6 +1076,7 @@ h1 {
     width: 274px;
     padding: 34px 32px;
     margin: 0 62px 0 0;
+	font-size:14px;
 }
 .right-info h3 {
     color: #2d4656;
@@ -1616,6 +1622,8 @@ h1 {
     display: inline-block;
     vertical-align: top;
     margin: 0px 28px 0 0;
+    width: 128px;
+    height: 40px;
 }
 .reload {
     width: 21px;
@@ -1972,6 +1980,11 @@ textarea.error {
 	background-color: #fff;
 	position: relative;
 }
+.slider-top .fnc {
+	width:100%;
+	display:block;
+	text-align:center;
+}
 .slider-top ul{
     margin:  0;
 }
@@ -2010,7 +2023,7 @@ textarea.error {
 	top: 191px;
 }
 .slider-top  .bx-wrapper .bx-prev {
-	left: 20px;
+	left: 25px;
 	background: url(../images/sprite.png) no-repeat -139px -100px;
 }
 .slider-top .bx-wrapper .bx-next {
@@ -2278,4 +2291,17 @@ textarea.error {
 .dones h2{
     font-weight:400;
     margin: 0 0 25px;
+}
+.obj-content{
+	  font-size: 16px;
+    line-height: 26px;
+    font-weight: 300;
+    color: #506776;
+    margin: 0 0 13px;
+}
+.cont-wrap{
+	font-size:0;
+}
+.detail-one-img{
+    border: 1px solid rgba(92,112,142,.23);
 }
